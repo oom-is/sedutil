@@ -32,6 +32,8 @@ along with sedutil.  If not, see <http://www.gnu.org/licenses/>.
 #include "DtaStructures.h"
 #include "DtaHexDump.h"
 #include "DtaDiskUSB.h"
+// Line below is only needed for the funky debug output, but leaving it intact
+// for now....
 #include <fstream>
 
 using namespace std;
@@ -252,7 +254,7 @@ void DtaDiskNVMe::identify(OPAL_DiskInfo& disk_info)
     return;
 }
 
-/** Close the filehandle so this object can be delete. */
+/** Close the filehandle so this object can be deleted. */
 DtaDiskNVMe::~DtaDiskNVMe()
 {
     LOG(D1) << "Destroying DtaDiskNVMe";
