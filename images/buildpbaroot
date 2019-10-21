@@ -33,7 +33,9 @@ sed -i '/menu "System tools"/a \\tsource "package/sedutil/Config.in"' package/Co
 cp -r ../../buildroot/packages/sedutil/ package/
 # Make a distribution from the current source
 cd ../../..
-autoreconf 
+# -i (--install) required below per r0m30 in DTA #160
+# If building from scratch using autotools, that build should also use autoreconf -i
+autoreconf -i
 ./configure
 make dist
 mkdir images/scratch/buildroot/dl/
